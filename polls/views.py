@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404,render
 from django.http import HttpResponse,HttpResponseRedirect
 from .models import Question,Choice
 from django.template import loader
@@ -18,9 +18,9 @@ class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
 
-    class ResultsView(generic.DetailView):
-        model = Question
-        template_name = "polls/results.html"
+class ResultsView(generic.DetailView):
+    model = Question
+    template_name = "polls/results.html"
 
 
 def index(request):
